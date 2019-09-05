@@ -81,3 +81,5 @@ function forever(){
     }
     requestAnimationFrame(forever);
 }
+
+forever();
