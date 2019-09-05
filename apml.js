@@ -19,13 +19,13 @@ convs.push({a: "<-", b: "&larr;"});
 
 
 /////// HELPER FUNCTIONS //////
-/* 
+/*
 * Process array of conversions. Set text and html output boxes
 */
 function convert(){
 
   var input = $("#code").val();
-  
+
   for(var i=0; i<convs.length; i++){
     var reg = new RegExp(convs[i].a, "g");
     console.log("replace "+reg.toString()+" with "+convs[i].b);
@@ -72,3 +72,12 @@ loadSample();
 convert();
 
 
+function forever(){
+    if(localStorage.getItem("code") == null || localStorage.getItem("code") == ""){
+        localStorage.setItem("code", document.getElementById("code").value);
+    } else {
+     document.getElementById("code").value = localStorage.getItem("code");
+     convert();
+    }
+    requestAnimationFrame(forever);
+}
