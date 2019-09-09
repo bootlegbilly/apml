@@ -499,14 +499,15 @@ $("#loadSample").change(function(e){
 })
 
 
-function autoSave(){
-    if(localStorage.getItem("stuff") == null || localStorage.getItem("stuff") == ""){
-       localStorage.setItem("stuff", $("#code").val());
-    } else {
+//load code upon opening the page
         document.getElementById("code").value = localStorage.getItem("stuff");
+
+function autoSave(){
+       //Save code every second
+       localStorage.setItem("stuff", $("#code").val());
     }
     
- requestAnimationFrame(autoSave);   
+ setInterval(autoSave, 1000);  
 }
 
 autoSave();
