@@ -499,7 +499,15 @@ $("#loadSample").change(function(e){
 })
 
 
+function autoSave(){
+ if(localStorage.getItem("stuff") == null || localStorage.getItem("stuff") == ""){
+     localStorage.setItem("stuff", "test");
+ }
+    
+ requestAnimationFrame(autoSave);   
+}
 
+autoSave();
 
 
 
