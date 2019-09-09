@@ -500,7 +500,6 @@ $("#loadSample").change(function(e){
 
 
 function autoSave(){
-    alert(localStorage.getItem("stuff"));
     if(localStorage.getItem("stuff") == null || localStorage.getItem("stuff") == ""){
        localStorage.setItem("stuff", $("#code").val());
     } else {
