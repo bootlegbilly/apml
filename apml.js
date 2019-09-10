@@ -107,7 +107,7 @@ function updateStorage(){
   localStorage.savedCode = toSave;
 
 
-};
+}
 
 function isBlockStatement(line){
 
@@ -505,11 +505,13 @@ $("#loadSample").change(function(e){
 function autoSave(){
        //Save code every second
        localStorage.setItem("stuff", $("#code").val());
-    }
     
- setInterval(autoSave, 1000);  
+    
+
 }
 
+
+ setInterval(autoSave, 1000);  
 autoSave();
 
 
